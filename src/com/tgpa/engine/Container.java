@@ -1,8 +1,5 @@
 package com.tgpa.engine;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-
 public class Container implements Runnable {
 
     private Thread thread;
@@ -14,8 +11,8 @@ public class Container implements Runnable {
     private boolean running = false;
     private final double UPDATE_CAP = 1.0/60.0;
     private int width = 320, height = 240;
-    private float scale = 4f;
-    private String title = "BorgarEngine v1.0";
+    private float scale = 3f;
+    private String title = "PetriEngine v1.0";
 
     public Container(AbstractGame game) {
         this.game = game;

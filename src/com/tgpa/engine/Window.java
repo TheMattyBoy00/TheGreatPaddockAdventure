@@ -37,6 +37,10 @@ public class Window {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
+        frame.addKeyListener(gc.getInput());
+        frame.addMouseListener(gc.getInput());
+        frame.addMouseMotionListener(gc.getInput());
+        frame.addMouseWheelListener(gc.getInput());
 
         canvas.createBufferStrategy(2);
         bs = canvas.getBufferStrategy();

@@ -17,7 +17,7 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
     private int mouseX, mouseY;
     private int scroll;
 
-    public Input() {
+    public Input(Container gc) {
         this.gc = gc;
         mouseX = 0;
         mouseY = 0;
@@ -33,10 +33,10 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
 
         scroll = 0;
 
-        for(int i = 0; i < NUM_KEYS); i++) {
+        for(int i = 0; i < NUM_KEYS; i++) {
             keysLast[i] = keys[i];
         }
-        for(int i = 0; i < NUM_BUTTONS); i++) {
+        for(int i = 0; i < NUM_BUTTONS; i++) {
             buttonsLast[i] = buttons[i];
         }
     }
@@ -57,12 +57,12 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener, M
         return keys[buttons];
     }
 
-    public boolean isButtonUp(int buttons) {
-        return !buttons[buttons] && buttonsLast[buttons];
+    public boolean isButtonUp(int button) {
+        return !buttons[button] && buttonsLast[button];
     }
 
-    public boolean isButtonDown(int buttons) {
-        return buttons[buttons] && !buttonsLast[buttons];
+    public boolean isButtonDown(int button) {
+        return buttons[button] && !buttonsLast[button];
     }
 
     @Override
